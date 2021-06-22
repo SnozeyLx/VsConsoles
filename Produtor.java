@@ -8,7 +8,7 @@ class Produtor extends Thread{
 	String[] frutas = {"Banana","Morango","Abacate","Abacaxi","Pera","Laranja","Uva","Tomate","Acerola","Maça"};
 	
 	Buffer buffer;
-	Semaphore semaphore;
+	Semaphore semaphore;   // tentei a implementação do semaforo nas classes produtora e consumidora e funcionou um pouco melhor "descrito no relatorio"
 	
 	public Produtor(int id, Buffer buffer, Semaphore s) {
 		this.id = id;
@@ -39,7 +39,7 @@ try {
 	e.printStackTrace();
 }
 
-	int idx = new Random().nextInt(frutas.length);
+	int idx = new Random().nextInt(frutas.length);         // escolhe um item do array da fruta e poe como elemento
 	String produto = (frutas[idx]);
 	
 if (buffer.insert_item(produto)) 
